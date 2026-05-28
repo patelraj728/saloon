@@ -23,7 +23,7 @@ export default function Footer() {
             <div className="grid grid-cols-3 gap-2 max-w-md">
               {igImgs.map((src, i) => (
                 <motion.a key={i} href="#" whileHover={{ scale: 1.04 }} className="aspect-square overflow-hidden block hover-target">
-                  <img src={src} alt="" loading="lazy" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                  <img src={src} alt="" loading="lazy" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
                 </motion.a>
               ))}
             </div>

@@ -23,17 +23,20 @@ export default function Hero() {
   return (
     <section ref={ref} className="relative h-screen w-full overflow-hidden bg-ink">
       <motion.div style={{ y, scale }} className="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=2000&q=85" alt="" className="w-full h-full object-cover opacity-55" />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/30 to-ink" />
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=2000&q=85" alt="" className="w-full h-full object-cover opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/20 via-ink/10 to-ink" />
       </motion.div>
 
-      <div ref={glowRef} className="hidden md:block pointer-events-none absolute top-0 left-0 w-[500px] h-[500px] rounded-full bg-gold/15 blur-[120px] transition-transform duration-300" />
+      {/* Glowing background colorful blobs */}
+      <div ref={glowRef} className="hidden md:block pointer-events-none absolute top-0 left-0 w-[550px] h-[550px] rounded-full bg-violet/20 blur-[130px] transition-transform duration-300" />
+      <div className="pointer-events-none absolute top-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-rose/20 blur-[130px] hidden md:block" />
+      <div className="pointer-events-none absolute bottom-1/4 left-1/3 w-[300px] h-[300px] rounded-full bg-gold/15 blur-[110px] hidden md:block" />
 
       {/* Floating decorative elements */}
       <motion.div animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }} transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute top-32 right-12 md:right-32 w-32 h-32 border border-gold/30 rounded-full hidden md:block" />
+        className="absolute top-32 right-12 md:right-32 w-32 h-32 border border-violet/30 rounded-full hidden md:block" />
       <motion.div animate={{ y: [0, 30, 0], rotate: [0, -8, 0] }} transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute bottom-44 left-12 md:left-40 w-20 h-20 border border-blush/40 hidden md:block" />
+        className="absolute bottom-44 left-12 md:left-40 w-20 h-20 border border-rose/40 hidden md:block" />
 
       <motion.div style={{ opacity }} className="relative z-10 h-full flex flex-col justify-center px-6 md:px-16 lg:px-24 max-w-[1600px] mx-auto">
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1.2 }}
@@ -45,7 +48,7 @@ export default function Hero() {
         <SplitText as="h1" className="font-display text-[14vw] md:text-[9vw] lg:text-[8.5vw] leading-[0.95] text-cream tracking-tight">
           Beauty,
         </SplitText>
-        <SplitText as="h1" delay={0.15} className="font-display text-[14vw] md:text-[9vw] lg:text-[8.5vw] leading-[0.95] text-cream tracking-tight italic">
+        <SplitText as="h1" delay={0.15} className="font-display text-[14vw] md:text-[9vw] lg:text-[8.5vw] leading-[0.95] text-gradient-gold-rose tracking-tight italic">
           unhurried.
         </SplitText>
 

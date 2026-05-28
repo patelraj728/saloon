@@ -28,7 +28,7 @@ export default function Services() {
             <SplitText as="h2" className="font-display text-6xl md:text-8xl lg:text-9xl leading-[0.95] text-cream">
               Services
             </SplitText>
-            <SplitText as="h2" delay={0.1} className="font-display text-6xl md:text-8xl lg:text-9xl leading-[0.95] text-cream italic">
+            <SplitText as="h2" delay={0.1} className="font-display text-6xl md:text-8xl lg:text-9xl leading-[0.95] text-gradient-purple-pink italic">
               composed.
             </SplitText>
           </div>
@@ -52,7 +52,7 @@ export default function Services() {
                 <span className="font-display text-xl md:text-2xl text-gold/70">{s.no}</span>
                 <div className="flex-1 flex flex-col md:flex-row md:items-baseline md:justify-between gap-3">
                   <motion.h3
-                    variants={{ hover: { x: 20, color: '#d4b483' } }}
+                    variants={{ hover: { x: 20, color: '#ec4899' } }}
                     transition={{ duration: 0.5, ease: [0.7,0,.2,1] }}
                     className="font-display text-4xl md:text-6xl lg:text-7xl text-cream"
                   >
@@ -60,7 +60,7 @@ export default function Services() {
                   </motion.h3>
                   <span className="text-[11px] tracking-[0.3em] uppercase text-cream/40">{s.tag}</span>
                 </div>
-                <motion.span variants={{ hover: { x: 8, opacity: 1 } }} className="text-gold opacity-50 text-2xl">→</motion.span>
+                <motion.span variants={{ hover: { x: 8, opacity: 1 } }} className="text-rose opacity-50 text-2xl">→</motion.span>
               </motion.div>
             ))}
           </div>

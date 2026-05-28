@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --bg: #171a20;
-  --fg: #f7ece1;
+  --bg: #080411;
+  --fg: #faf5ff;
 }
 
 * { box-sizing: border-box; }
@@ -12,13 +12,30 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); }
 body {
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
+  background-image: radial-gradient(circle at top left, #1a0b36 0%, #080411 60%, #100624 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
   overflow-x: hidden;
   cursor: pointer;
 }
 
 @media (max-width: 768px) { body { cursor: auto; } }
 
-::selection { background: #d49860; color: #171a20; }
+::selection { background: #ec4899; color: #faf5ff; }
+
+/* Text gradient utility classes */
+.text-gradient-gold-rose {
+  background: linear-gradient(135deg, #f59e0b 0%, #ff6b6b 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-gradient-purple-pink {
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 
 /* Custom scrollbar */
 ::-webkit-scrollbar { width: 6px; }

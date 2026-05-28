@@ -33,7 +33,7 @@ function AboutHero() {
           <SplitText as="h1" delay={0.1} className="font-display text-[14vw] md:text-[10vw] lg:text-[8.5vw] leading-[0.9] text-cream italic">
             of small,
           </SplitText>
-          <SplitText as="h1" delay={0.2} className="font-display text-[14vw] md:text-[10vw] lg:text-[8.5vw] leading-[0.9] text-blush italic">
+          <SplitText as="h1" delay={0.2} className="font-display text-[14vw] md:text-[10vw] lg:text-[8.5vw] leading-[0.9] text-gradient-purple-pink italic">
             certain things.
           </SplitText>
           <Reveal delay={0.6}>
@@ -66,8 +66,8 @@ function Founder() {
     <section ref={ref} className="bg-charcoal py-32 md:py-48 px-6 md:px-12 border-y border-cream/5">
       <div className="max-w-[1600px] mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
         <div className="lg:col-span-5 relative">
-          <motion.div style={{ y }} className="aspect-[4/5] overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=1200&q=85" alt="Élise Moreau" className="w-full h-full object-cover grayscale" />
+          <motion.div style={{ y }} className="aspect-[4/5] overflow-hidden rounded-xl border border-cream/5 shadow-xl">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=1200&q=85" alt="Élise Moreau" className="w-full h-full object-cover transition-transform duration-700 hover:scale-102" />
           </motion.div>
           <div className="absolute -bottom-6 -right-6 bg-ink p-6 border border-gold/30 max-w-[200px]">
             <div className="font-script text-3xl text-gold leading-none">Élise</div>
@@ -80,7 +80,7 @@ function Founder() {
             <div className="text-[11px] tracking-[0.4em] text-gold uppercase mb-6">— The Founder</div>
           </Reveal>
           <SplitText as="h2" className="font-display text-5xl md:text-7xl text-cream leading-[1]">A studio born of</SplitText>
-          <SplitText as="h2" delay={0.1} className="font-display text-5xl md:text-7xl text-cream leading-[1] italic">refusal.</SplitText>
+          <SplitText as="h2" delay={0.1} className="font-display text-5xl md:text-7xl text-gradient-gold-rose leading-[1] italic">refusal.</SplitText>
 
           <Reveal delay={0.3}>
             <p className="mt-10 text-cream/70 leading-[1.85] font-light text-[17px]">
@@ -122,7 +122,7 @@ function Philosophy() {
               <div className="text-[11px] tracking-[0.4em] text-gold uppercase mb-6">— House Principles</div>
             </Reveal>
             <SplitText as="h2" className="font-display text-5xl md:text-7xl text-cream leading-[1]">Four rules,</SplitText>
-            <SplitText as="h2" delay={0.1} className="font-display text-5xl md:text-7xl text-cream leading-[1] italic">never broken.</SplitText>
+            <SplitText as="h2" delay={0.1} className="font-display text-5xl md:text-7xl text-gradient-purple-pink leading-[1] italic">never broken.</SplitText>
           </div>
           <Reveal delay={0.2} className="md:col-span-6 md:col-start-7">
             <p className="text-cream/65 leading-relaxed font-light">
@@ -153,16 +153,16 @@ function Team() {
         <div className="text-center mb-20">
           <Reveal><div className="text-[11px] tracking-[0.4em] text-gold uppercase mb-4">— The Atelier</div></Reveal>
           <SplitText as="h2" className="font-display text-5xl md:text-7xl text-cream leading-[1]">Eighteen pairs</SplitText>
-          <SplitText as="h2" delay={0.1} className="font-display text-5xl md:text-7xl text-cream leading-[1] italic">of careful hands.</SplitText>
+          <SplitText as="h2" delay={0.1} className="font-display text-5xl md:text-7xl text-gradient-gold-rose leading-[1] italic">of careful hands.</SplitText>
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
           {team.map((m, i) => (
             <Reveal key={m.n} delay={i * 0.08}>
               <div className="group hover-target cursor-none">
-                <div className="aspect-[3/4] overflow-hidden mb-5 relative">
-                  <img src={m.img} alt={m.n} loading="lazy" className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[1.2s] ease-out" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                <div className="aspect-[3/4] overflow-hidden mb-5 relative rounded-lg border border-cream/5">
+                  <img src={m.img} alt={m.n} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.2s] ease-out" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 </div>
                 <div className="font-display text-2xl text-cream group-hover:text-gold transition-colors duration-500">{m.n}</div>
                 <div className="text-[10px] tracking-[0.3em] uppercase text-cream/50 mt-1">{m.r}</div>
@@ -217,7 +217,7 @@ function FinalCTA() {
     <section className="bg-charcoal py-40 md:py-56 px-6 text-center border-t border-cream/5">
       <div className="text-[11px] tracking-[0.4em] text-gold uppercase mb-8">— Welcome</div>
       <SplitText as="h2" className="font-display text-5xl md:text-8xl text-cream leading-[0.95]">Experience</SplitText>
-      <SplitText as="h2" delay={0.1} className="font-display text-5xl md:text-8xl text-cream leading-[0.95] italic">luxury, redefined.</SplitText>
+      <SplitText as="h2" delay={0.1} className="font-display text-5xl md:text-8xl text-gradient-purple-pink leading-[0.95] italic">luxury, redefined.</SplitText>
       <div className="mt-12 flex flex-wrap gap-5 justify-center">
         <MagneticBtn>Reserve Your Seat</MagneticBtn>
         <MagneticBtn href="#contact" className="!border-cream/30">Find the Atelier</MagneticBtn>
