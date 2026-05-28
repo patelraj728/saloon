@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ELIXIR SALON - About</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&amp;family=Playfair+Display:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Smooth scrolling */
+        html { scroll-behavior: smooth; }
+        
+        /* GSAP-like reveal classes for vanilla JS */
+        .reveal-up { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal-up.active { opacity: 1; transform: translateY(0); }
+        
+        /* Soft overlap utility */
+        .soft-overlap-right { margin-left: -40px; z-index: 10; position: relative; }
+        @media (max-width: 768px) { .soft-overlap-right { margin-left: 0; margin-top: -20px; } }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#5f5e5e", "outline-variant": "#c4c7c7", "surface-container-low": "#f7f3f2", "inverse-surface": "#313030", "surface-variant": "#e5e2e1", "tertiary-container": "#281715", "on-tertiary-fixed": "#281715", "on-tertiary-container": "#987e7a", "error-container": "#ffdad6", "on-primary-fixed-variant": "#474746", "secondary-fixed-dim": "#c8c8b0", "primary-fixed": "#e5e2e1", "on-primary": "#ffffff", "surface-container": "#f1edec", "surface-container-highest": "#e5e2e1", "primary-container": "#1c1b1b", "inverse-primary": "#c8c6c5", "on-surface-variant": "#444748", "primary-fixed-dim": "#c8c6c5", "outline": "#747878", "on-secondary-fixed": "#1b1d0e", "on-surface": "#1c1b1b", "on-secondary-fixed-variant": "#474836", "surface-container-lowest": "#ffffff", "background": "#fdf8f8", "on-primary-fixed": "#1c1b1b", "secondary-container": "#e1e1c9", "tertiary": "#000000", "inverse-on-surface": "#f4f0ef", "surface-container-high": "#ebe7e6", "tertiary-fixed-dim": "#dec0bb", "surface": "#fdf8f8", "surface-bright": "#fdf8f8", "primary": "#000000", "on-primary-container": "#858383", "surface-dim": "#ddd9d8", "on-tertiary-fixed-variant": "#57423e", "secondary-fixed": "#e4e4cc", "on-error-container": "#93000a", "on-background": "#1c1b1b", "on-secondary": "#ffffff", "secondary": "#5e604d", "on-tertiary": "#ffffff", "tertiary-fixed": "#fbdbd6", "on-secondary-container": "#636451", "error": "#ba1a1a", "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px", "gutter": "32px", "margin-desktop": "80px", "stack-md": "64px", "container-max": "1440px", "margin-mobile": "24px", "stack-lg": "120px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Montserrat"], "body-md": ["Montserrat"], "display-lg-mobile": ["Playfair Display"], "headline-lg-mobile": ["Playfair Display"], "headline-md": ["Playfair Display"], "label-md": ["Montserrat"], "button": ["Montserrat"], "display-lg": ["Playfair Display"], "headline-lg": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "300" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.3", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "button": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+<!-- JSON Component: TopNavBar -->
+<header class="bg-transparent dark:bg-transparent fixed top-0 w-full z-50 transition-all duration-300" id="global-header">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-8 w-full max-w-container-max mx-auto no-border-no-shadow flat no shadows">
+<!-- Mobile Menu Toggle (Implied) -->
+<button class="md:hidden text-primary dark:text-inverse-primary p-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+<!-- Brand Logo -->
+<a class="font-display-lg-mobile md:font-display-lg text-headline-lg-mobile md:text-headline-lg uppercase tracking-widest text-primary dark:text-inverse-primary hover:scale-105 transition-transform duration-300" href="#">
+                ELIXIR SALON
+            </a>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center gap-gutter">
+<ul class="flex items-center gap-8 font-label-md text-label-md uppercase">
+<li><a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-500 hover:scale-105" href="#">Services</a></li>
+<li><a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-500 hover:scale-105" href="#">Artists</a></li>
+<li><a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-500 hover:scale-105" href="#">Gallery</a></li>
+<!-- Active State for About Page -->
+<li><a class="text-primary dark:text-inverse-primary border-b-2 border-primary dark:border-inverse-primary pb-1 hover:scale-105 transition-transform duration-300" href="#">Atelier</a></li>
+<li><a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-500 hover:scale-105" href="#">Journal</a></li>
+</ul>
+</nav>
+<!-- Trailing Action -->
+<div class="hidden md:block">
+<a class="font-button text-button uppercase bg-primary text-on-primary px-8 py-4 hover:bg-surface-tint transition-colors duration-300 rounded-none tracking-widest" href="#">
+                    BOOK APPOINTMENT
+                </a>
+</div>
+<!-- Mobile Search Icon (Implied) -->
+<button class="md:hidden text-primary dark:text-inverse-primary p-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
+</button>
+</div>
+</header>
+<main class="pt-[140px] md:pt-[180px]">
+<!-- Hero Section: Editorial Layout -->
+<section class="min-h-[819px] flex items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-stack-lg">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center w-full">
+<!-- Text Area -->
+<div class="md:col-span-5 md:col-start-1 z-10 reveal-up">
+<span class="font-label-md text-label-md uppercase tracking-widest text-on-tertiary-container block mb-6">Our Narrative</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary leading-tight mb-8">
+                        Redefining the <br/><i class="font-light">Architecture</i> <br/>of Beauty.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+                        A sanctuary where minimalist precision meets romantic luxury. We strip away the unnecessary to reveal the profound.
+                    </p>
+</div>
+<!-- Layered Image Composition -->
+<div class="md:col-span-6 md:col-start-7 relative mt-12 md:mt-0 h-[500px] md:h-[700px] w-full reveal-up" style="transition-delay: 0.2s;">
+<!-- Ambient Backdrop Plane -->
+<div class="absolute top-10 right-0 w-3/4 h-full bg-surface-container-low z-0"></div>
+<!-- Primary Image -->
+<div class="absolute top-0 left-0 w-3/4 h-[80%] z-10 bg-cover bg-center" data-alt="A striking digital installation art piece featuring a softly lit, minimalist salon interior. The room is illuminated by high-key, soft white lighting that creates a bright, modern luxury aesthetic. The composition relies on a sophisticated palette of deep blacks, warm whites, and pristine soft beiges. A solitary, elegantly carved stone styling station sits as the focal point. The mood is serene, architectural, and highly editorial, reminiscent of a high-fashion magazine spread." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB39KF5nkTYMrmH8OilumYtxH1J842nnoPlOtdNr2nqprlm7hzcVg6P1j6E3xoKimSbLTNjzbaKesA4DMPEhZvKn9hBYpdHIbB5bd2lB-UdzNPjbi0irzGAU1pS66NJ3XJ-2w_3LtwJwBvqOvDX1h4wKbcSA9YV4W58A5eEF1HrWipfuyudI3DlPh_4C3sYZjZlHC9k7v6GiayqSfuIyVkn4t4qIJqVHmu3AaxWGQuQqbAmcHbk217pox9CPenwSip3an_EP5GCVNY8');">
+</div>
+<!-- Overlapping Accent Image -->
+<div class="absolute bottom-0 right-10 w-1/2 h-[50%] z-20 bg-cover bg-center shadow-[0_0_40px_rgba(0,0,0,0.04)]" data-alt="Close up macro photography of luxury styling tools resting on a raw marble surface. The lighting is diffused and moody, emphasizing the sleek textures of matte deep charcoal metal and brushed muted gold accents. The background is a soft out-of-focus warm white, creating deep field blur. The aesthetic is tactile, sophisticated, and clinically precise, perfectly aligning with a modern minimalist luxury brand identity." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB3Bl57sjpFFccotRv_Ypwg4Sh4baWcZHnBRLcPiyZB7xGID5-sG0HGW2Y8ys1O-nnuq3hktpbbYuTDzRCQWOZ-YYa58wQav3Y4i54_ADpzL6Icmu2AcmiTZxHBj4T-rC9cPZFYKfQX8JprMfkAk-pvMqviDyhZwTVVoWxXaAwc1ScZq0NCtf8cwrRSdjYFAI51O2-QZT1wERo9LPEdbEyJ5PV1KB3-h_xh7fQ7kK7JEbcp8tT7K1Ye4bEY6sGDi-ErJiv6fKkTJ9ef');">
+</div>
+</div>
+</div>
+</section>
+<!-- Founder Story: Split-screen storytelling -->
+<section class="py-stack-lg bg-surface-container-lowest relative overflow-hidden">
+<!-- Decorative minimal line -->
+<div class="absolute top-0 left-1/2 w-px h-24 bg-outline-variant -translate-x-1/2"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 items-center gap-margin-desktop">
+<div class="relative h-[600px] w-full reveal-up">
+<div class="absolute inset-0 bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-1000" data-alt="A cinematic, soft-focus portrait of a visionary female founder in a minimalist, light-filled studio. She wears a tailored deep charcoal blazer, contrasting against the bright, warm white environment. The lighting is natural and directional, highlighting the texture of the space and casting soft, atmospheric shadows. The image has a subtle film grain effect, conveying a high-end, editorial, and authoritative yet approachable mood." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDGX6GYc_2EGYBM3tsPjdRse8K0HxmpN9FkOm0XnDHcbeYDe0S50GgfsTxUFiyvgFcskvU1ex7Y5wfSWXd48ohzLCVNls0LV_NO21umvileXcu6sTLSkQIjpdfUhKwjZn9908T3MCiX6YtEO3ZwVkQYY1oLoy-XF9f6EYwfHMjY23mecvYVhhJtCNf9yY2TuEXuQVeOYzCjCe8_1_JGyZLhiEYDDm1h_rkkExRlBhnTAcEuPMAIT7adDwDwwPCuwiORBaHwJ0ai7VOP');">
+</div>
+<!-- Minimal border accent instead of shadow -->
+<div class="absolute -bottom-4 -left-4 w-full h-full border border-on-tertiary-container z-[-1]"></div>
+</div>
+<div class="flex flex-col justify-center reveal-up p-8 md:p-0" style="transition-delay: 0.2s;">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-8">
+                        The Genesis.
+                    </h2>
+<div class="space-y-6 text-on-surface-variant font-body-lg text-body-lg">
+<p>
+                            Founded in 2018, ELIXIR emerged from a desire to strip back the noise of the traditional salon experience. We envisioned a space that felt less like a commercial enterprise and more like a private, curated atelier.
+                        </p>
+<p>
+                            Every detail, from the ambient acoustics to the tactility of our styling chairs, has been rigorously considered. It is an exercise in restraint—where what is omitted is just as important as what remains.
+                        </p>
+</div>
+<div class="mt-12">
+<span class="font-display-lg text-[32px] text-on-tertiary-container italic tracking-widest block mb-2">E. Laurent</span>
+<span class="font-label-md text-label-md uppercase tracking-widest text-surface-tint">Founder &amp; Creative Director</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Philosophy: Minimal content blocks -->
+<section class="py-stack-lg max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-stack-md reveal-up">
+<span class="font-label-md text-label-md uppercase tracking-widest text-on-tertiary-container block mb-4">Our Ethos</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Pillars of Practice</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-gutter mt-16">
+<!-- Block 1 -->
+<div class="group reveal-up" style="transition-delay: 0.1s;">
+<div class="h-px w-12 bg-primary mb-8 transition-all duration-500 group-hover:w-full"></div>
+<span class="font-display-lg text-display-lg text-surface-variant block mb-4 group-hover:text-on-tertiary-container transition-colors duration-500">01</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Clinical Precision</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Methodical execution in every cut and color. We approach hair as an architectural medium, demanding exactitude and technical mastery.
+                    </p>
+</div>
+<!-- Block 2 -->
+<div class="group reveal-up" style="transition-delay: 0.2s;">
+<div class="h-px w-12 bg-primary mb-8 transition-all duration-500 group-hover:w-full"></div>
+<span class="font-display-lg text-display-lg text-surface-variant block mb-4 group-hover:text-on-tertiary-container transition-colors duration-500">02</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Quiet Luxury</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        An atmosphere devoid of pretense. True luxury whispers; it is found in the weight of the materials, the subtlety of the lighting, and undivided attention.
+                    </p>
+</div>
+<!-- Block 3 -->
+<div class="group reveal-up" style="transition-delay: 0.3s;">
+<div class="h-px w-12 bg-primary mb-8 transition-all duration-500 group-hover:w-full"></div>
+<span class="font-display-lg text-display-lg text-surface-variant block mb-4 group-hover:text-on-tertiary-container transition-colors duration-500">03</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Sustainable Integrity</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        A commitment to products and practices that respect both the individual and the environment. Uncompromising performance with a conscious footprint.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-stack-lg bg-surface-container-low text-center px-margin-mobile md:px-margin-desktop">
+<div class="max-w-2xl mx-auto reveal-up">
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-8">
+                    Experience Luxury Redefined.
+                </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">
+                    Step into our atelier and discover a new standard of bespoke care.
+                </p>
+<a class="inline-flex items-center gap-4 font-button text-button uppercase text-primary border-b border-primary pb-2 hover:text-on-tertiary-container hover:border-on-tertiary-container transition-colors duration-300" href="#">
+                    Reserve Your Session
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div>
+</section>
+</main>
+<!-- JSON Component: Footer -->
+<footer class="bg-surface-container-lowest dark:bg-inverse-surface w-full py-stack-lg bg-surface-container-low dark:bg-surface-container-low flat no shadows">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Brand Logo Col -->
+<div class="md:col-span-4 mb-12 md:mb-0">
+<a class="font-display-lg-mobile md:font-display-lg text-headline-lg-mobile text-primary dark:text-inverse-primary block mb-6" href="#">
+                    ELIXIR SALON
+                </a>
+<p class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant uppercase tracking-widest mt-12">
+                    © 2024 ELIXIR SALON. ALL RIGHTS RESERVED.
+                </p>
+</div>
+<!-- Links Col 1 -->
+<div class="md:col-span-4 md:col-start-7 flex flex-col gap-4 font-body-lg text-body-lg font-label-md text-label-md">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary underline underline-offset-8 decoration-1 transition-colors duration-300 w-fit" href="#">Instagram</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary underline underline-offset-8 decoration-1 transition-colors duration-300 w-fit" href="#">Pinterest</a>
+</div>
+<!-- Links Col 2 -->
+<div class="md:col-span-2 flex flex-col gap-4 font-body-lg text-body-lg font-label-md text-label-md mt-8 md:mt-0">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary underline underline-offset-8 decoration-1 transition-colors duration-300 w-fit" href="#">Contact</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary underline underline-offset-8 decoration-1 transition-colors duration-300 w-fit" href="#">Careers</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary underline underline-offset-8 decoration-1 transition-colors duration-300 w-fit" href="#">Privacy</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Intersection Observer for reveal animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // Run once
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-up').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Header scroll effect
+            const header = document.getElementById('global-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('bg-surface-container-lowest', 'shadow-[0_4px_40px_rgba(0,0,0,0.02)]');
+                    header.classList.remove('bg-transparent');
+                } else {
+                    header.classList.remove('bg-surface-container-lowest', 'shadow-[0_4px_40px_rgba(0,0,0,0.02)]');
+                    header.classList.add('bg-transparent');
+                }
+            });
+        });
+    </script>
+</body></html>

@@ -1,17 +1,351 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Italiana&family=Inter:wght@300;400;500;600&family=Allura&display=swap" rel="stylesheet">
-    <title>Maison Elle — Atelier de Beauté</title>
-    <meta name="description" content="A sanctuary of timeless beauty. Hair, skin, and bridal artistry crafted by hand at Maison Elle." />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ELIXIR SALON | High-End Editorial Beauty</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&amp;family=Playfair+Display:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/split-type"></script>
+<script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#5f5e5e",
+                        "outline-variant": "#c4c7c7",
+                        "surface-container-low": "#f7f3f2",
+                        "inverse-surface": "#313030",
+                        "surface-variant": "#e5e2e1",
+                        "tertiary-container": "#281715",
+                        "on-tertiary-fixed": "#281715",
+                        "on-tertiary-container": "#987e7a",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#474746",
+                        "secondary-fixed-dim": "#c8c8b0",
+                        "primary-fixed": "#e5e2e1",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#f1edec",
+                        "surface-container-highest": "#e5e2e1",
+                        "primary-container": "#1c1b1b",
+                        "inverse-primary": "#c8c6c5",
+                        "on-surface-variant": "#444748",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "outline": "#747878",
+                        "on-secondary-fixed": "#1b1d0e",
+                        "on-surface": "#1c1b1b",
+                        "on-secondary-fixed-variant": "#474836",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#fdf8f8",
+                        "on-primary-fixed": "#1c1b1b",
+                        "secondary-container": "#e1e1c9",
+                        "tertiary": "#000000",
+                        "inverse-on-surface": "#f4f0ef",
+                        "surface-container-high": "#ebe7e6",
+                        "tertiary-fixed-dim": "#dec0bb",
+                        "surface": "#fdf8f8",
+                        "surface-bright": "#fdf8f8",
+                        "primary": "#000000",
+                        "on-primary-container": "#858383",
+                        "surface-dim": "#ddd9d8",
+                        "on-tertiary-fixed-variant": "#57423e",
+                        "secondary-fixed": "#e4e4cc",
+                        "on-error-container": "#93000a",
+                        "on-background": "#1c1b1b",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#5e604d",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#fbdbd6",
+                        "on-secondary-container": "#636451",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "brand-deep-charcoal": "#1A1A1A",
+                        "brand-nude-pink": "#E6C7C2",
+                        "brand-soft-beige": "#F5F5DC",
+                        "brand-muted-gold": "#D4AF37"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0rem",
+                        "lg": "0rem",
+                        "xl": "0rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "32px",
+                        "margin-desktop": "80px",
+                        "stack-md": "64px",
+                        "container-max": "1440px",
+                        "margin-mobile": "24px",
+                        "stack-lg": "120px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Montserrat", "sans-serif"],
+                        "body-md": ["Montserrat", "sans-serif"],
+                        "display-lg-mobile": ["Playfair Display", "serif"],
+                        "headline-lg-mobile": ["Playfair Display", "serif"],
+                        "headline-md": ["Playfair Display", "serif"],
+                        "label-md": ["Montserrat", "sans-serif"],
+                        "button": ["Montserrat", "sans-serif"],
+                        "display-lg": ["Playfair Display", "serif"],
+                        "headline-lg": ["Playfair Display", "serif"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "button": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .split-text-char { display: inline-block; }
+        .parallax-bg { will-change: transform; }
+        .clip-reveal { clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%); transition: clip-path 1.5s cubic-bezier(0.77, 0, 0.175, 1); }
+        .clip-reveal.is-revealed { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+        .film-grain {
+            position: relative;
+        }
+        .film-grain::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.05"/%3E%3C/svg%3E');
+            pointer-events: none;
+            z-index: 10;
+        }
+        .btn-primary {
+            @apply bg-brand-deep-charcoal text-on-primary font-button text-button uppercase px-8 py-4 tracking-wider transition-colors hover:bg-surface-tint inline-block relative overflow-hidden;
+        }
+        .btn-secondary {
+            @apply border border-brand-muted-gold text-brand-deep-charcoal font-button text-button uppercase px-8 py-4 tracking-wider transition-colors hover:bg-brand-muted-gold hover:text-on-primary inline-block relative overflow-hidden;
+        }
+        
+        .char {
+            transform: translateY(115%);
+            transition: transform .5s;
+        }
+        
+        .image-mask-hover {
+            clip-path: circle(0% at 50% 50%);
+            transition: clip-path 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+        
+        .group:hover .image-mask-hover {
+            clip-path: circle(150% at 50% 50%);
+        }
+        
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-brand-soft-beige text-brand-deep-charcoal overflow-x-hidden antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white dark:bg-transparent transition-all duration-300" id="topNav">
+<div class="flex justify-between items-center px-margin-desktop py-8 w-full max-w-container-max mx-auto">
+<a class="font-display-lg text-headline-lg uppercase tracking-widest text-primary dark:text-inverse-primary" href="#">ELIXIR SALON</a>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-500 font-label-md text-label-md hover:scale-105 transition-transform duration-300" href="/about.html">About</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-500 font-label-md text-label-md hover:scale-105 transition-transform duration-300" href="/artists.html">Artists</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-500 font-label-md text-label-md hover:scale-105 transition-transform duration-300" href="/gallery.html">Gallery</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-500 font-label-md text-label-md hover:scale-105 transition-transform duration-300" href="/atelier.html">Atelier</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-500 font-label-md text-label-md hover:scale-105 transition-transform duration-300" href="/journal.html">Journal</a>
+</div>
+<a class="hidden md:block btn-primary magnetic" href="#">BOOK APPOINTMENT</a>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" style="font-size: 32px;">menu</span>
+</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative h-screen w-full overflow-hidden flex items-center justify-center">
+<div class="absolute inset-0 parallax-bg" id="heroBg">
+<img alt="Hero Interior" class="w-full h-full object-cover opacity-80 film-grain" data-alt="A cinematic, high-end beauty salon interior. Minimalist architecture with soft beige and deep charcoal accents. Soft, diffused lighting creates a serene, luxurious atmosphere. Hints of nude pink in the decor. High fashion editorial style photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIEG_x6YkuNL9Uan6Q3-oAhx_6CTSXgG8tYmsj6sH0trkIEJMtzbO71-sABnrsqkeSsAH-2Y540MDBYvPsSKPU8dOhWWrAnlUUw5YF0yTyNp3sq6OdiHuDDOpHR5odkVeEbLKS59zBPTerD9SNT4GVGt1cKyYfWf9gnMEVph_zniMefEWvhnAXcOjdM-vGXplyKbi6Q-KqbthPRmy2L-8I5c6t72oz71Wt3CkhPWRh0mLGbdTUIP34BGtCZ9Cvh_GlEgD_teEGhv1m"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-b from-brand-soft-beige/40 to-transparent"></div>
+<div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20">
+<div class="overflow-hidden mb-6">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-brand-deep-charcoal leading-tight hero-title">
+                        Refined Beauty.<br/>Uncompromising Elegance.
+                    </h1>
+</div>
+<div class="overflow-hidden mb-10">
+<p class="font-body-lg text-body-lg text-brand-deep-charcoal/80 max-w-2xl mx-auto hero-subtitle">
+                        Experience the pinnacle of editorial styling and holistic care in a sanctuary of modern minimalism.
+                    </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-6 justify-center items-center hero-buttons">
+<a class="btn-primary w-full sm:w-auto magnetic" href="#">Book Appointment</a>
+<a class="btn-secondary w-full sm:w-auto magnetic" href="#services">Explore Services</a>
+</div>
+</div>
+</section>
+<!-- The Elixir Standard -->
+<section class="relative min-h-[90vh] w-full overflow-hidden flex items-center" id="standard">
+<div class="absolute inset-0 parallax-bg" id="standardBg">
+<img alt="The Elixir Standard" class="w-full h-full object-cover opacity-90 film-grain" data-alt="Abstract, high-fashion close-up of a model's face or conceptual beauty element. Deep charcoal background with soft, ethereal lighting emphasizing texture and structure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdPt_EuM5c-AtmuoRpY_8hbD__8RTMN7pcKyidnhelwFhcVnuXuM7RdDL0-LucHo6HeZVuqQBXMh7mSVwi83Bnsh4eyGrw4XZvMyrajjxTy9GNmloDDmvLby-tGsPP-lhaVvXqB9KdN5qvG92pItwbxYNCXE8EbSbl8RXg52XQcA4AEJkvdojNRXzxXskih5y2n9ITXCvt9yPLS-sGaTR9Nt9lfXKay1vwXz1vSvZ2H181pXNd9ivZoZpuvb5HREtvBhKHn93Fd8bp"/>
+<div class="absolute inset-0 bg-brand-deep-charcoal/40"></div>
+</div>
+<div class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full text-brand-soft-beige">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+<div></div>
+<div>
+<h2 class="font-display-lg text-headline-lg-mobile md:text-display-lg mb-8 leading-tight standard-title text-brand-soft-beige">The Elixir Standard</h2>
+<ul class="space-y-8 standard-values">
+<li class="border-b border-brand-soft-beige/30 pb-6">
+<h3 class="font-headline-md text-headline-md mb-2">Artistic Vision</h3>
+<p class="font-body-md text-body-md text-brand-soft-beige/80">We approach every client as a canvas, utilizing architectural precision and creative intuition to craft bespoke looks.</p>
+</li>
+<li class="border-b border-brand-soft-beige/30 pb-6">
+<h3 class="font-headline-md text-headline-md mb-2">Clinical Purity</h3>
+<p class="font-body-md text-body-md text-brand-soft-beige/80">Our formulations bridge the gap between potent botanical ingredients and advanced dermatological science.</p>
+</li>
+<li>
+<h3 class="font-headline-md text-headline-md mb-2">Sanctuary Experience</h3>
+<p class="font-body-md text-body-md text-brand-soft-beige/80">Every visit is designed as a restorative ritual within our minimalist, sensory-curated environment.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Seasonal Edit -->
+<section class="py-stack-lg bg-surface-container-low overflow-hidden" id="seasonal">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-16">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-brand-deep-charcoal seasonal-title">The Seasonal Edit</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 max-w-md seasonal-title">A curated selection of defining aesthetics and essential rituals for the current moment.</p>
+</div>
+<div class="flex gap-8 px-margin-mobile md:px-margin-desktop overflow-x-auto hide-scrollbar pb-10 snap-x snap-mandatory">
+<!-- Item 1 -->
+<div class="min-w-[85vw] md:min-w-[40vw] lg:min-w-[30vw] snap-center seasonal-item">
+<div class="aspect-[4/5] overflow-hidden mb-6 relative group clip-reveal-container">
+<img alt="Seasonal Item 1" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 clip-reveal-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn7qIj9GefMlWM5c2I18SAhvJJJ4BxDSGyjOkLglEjMp3HiUxPjSTi7vcGV4DfYDSbCtYOYV0ZsRcZnQMgd9Lff8JbFI6iE3A-bBtwH_Kr1AOvtt5cKdGXTngxdVd4KD1fXgppB12s-GqK6L6T7KB2RegvjAXmkmXAOleMi__sEXIBPXwVf71ggivRfiT4Bj2Fqh1PuwQt6PMs7vNpZmMSygyZSa365A8onEvPLW6IlaZshF5SHcHqnJSL6kchoGDNqf-_rfMBIxmZ"/>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">The Glass Complexion</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Our signature multi-step protocol for unparalleled luminosity and hydration.</p>
+<a class="font-label-md text-label-md uppercase tracking-widest border-b border-brand-deep-charcoal pb-1 hover:text-brand-muted-gold hover:border-brand-muted-gold transition-colors" href="#">Discover</a>
+</div>
+<!-- Item 2 -->
+<div class="min-w-[85vw] md:min-w-[40vw] lg:min-w-[30vw] snap-center seasonal-item md:mt-16">
+<div class="aspect-[4/5] overflow-hidden mb-6 relative group clip-reveal-container">
+<img alt="Seasonal Item 2" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 clip-reveal-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7SL54JVx3YDyIi6Rem7-ZYdIKZxBRIcFlIj_M-oOOmkSio89i09tfTuxFMydFwoiSHucb6C4z-WyXY11UyRdko-pLLIrNERIGkMjA50iZU3WkJ5qrEULOADUBZAN_ipJyHZu4vKrF6YQcnyKZ9AM8KKLHOLCcSmth1D88aV08fqJqGCAdPs5VdHMHTkJsu_sKmf6gcGQ0qhguiWDf73N08seMtjD37DkR145XfbBhnRy8TiFf-0O_1XH0uoDEcCMKu5GCsdsTH9Lj"/>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Structural Bob</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Precision tailoring meets effortless texture for the definitive silhouette of the season.</p>
+<a class="font-label-md text-label-md uppercase tracking-widest border-b border-brand-deep-charcoal pb-1 hover:text-brand-muted-gold hover:border-brand-muted-gold transition-colors" href="#">Discover</a>
+</div>
+<!-- Item 3 -->
+<div class="min-w-[85vw] md:min-w-[40vw] lg:min-w-[30vw] snap-center seasonal-item">
+<div class="aspect-[4/5] overflow-hidden mb-6 relative group clip-reveal-container">
+<img alt="Seasonal Item 3" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 clip-reveal-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3MeINIHPadidVxH6cvAp7ZKOOHmQfGPxBvWpThTWjgIBluB7qZcxkt9LaZmyX4We0ry4HsdKuNx1IlnVPp8eBYUyM3oUwTwA7xp0ir3woJmWXylOBAz8iGiSuX0-AerdryJarqaZjKZeqTJBb2OXw0F_9-_Wz5IQGWh_iO8Mj4Vqmu6TZzwdDsHPU1I2Qt3HLI1zRPsidrpOY2ACECqk17XPcm2qnWx2ciS1jzDGamPnjWQd-uSB8qsv-FXr9v8oMAHU47tFElac4"/>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Botanical Alchemy Oil</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Our proprietary blend of rare active botanicals for intense cellular renewal.</p>
+<a class="font-label-md text-label-md uppercase tracking-widest border-b border-brand-deep-charcoal pb-1 hover:text-brand-muted-gold hover:border-brand-muted-gold transition-colors" href="#">Discover</a>
+</div>
+</div>
+</section>
+<!-- Services Preview -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto bg-surface-container-lowest" id="services">
+<div class="mb-16 md:mb-24 flex flex-col md:flex-row justify-between items-end gap-8">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4 text-brand-deep-charcoal services-title">The Atelier Collection</h2>
+<p class="font-body-md text-body-md text-on-surface-variant services-title">Curated treatments designed to elevate your natural essence, delivered with clinical precision and artistic flair.</p>
+</div>
+<a class="font-label-md text-label-md uppercase tracking-widest border-b border-brand-deep-charcoal pb-1 hover:text-brand-muted-gold hover:border-brand-muted-gold transition-colors" href="#">View All Services</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter border-t border-brand-deep-charcoal/10 pt-16">
+<!-- Hair -->
+<div class="md:col-span-12 group cursor-pointer reveal-card flex flex-col md:flex-row items-center gap-12 mb-24 border-b border-brand-deep-charcoal/10 pb-24 relative">
+<div class="md:w-1/2 w-full order-2 md:order-1 z-10">
+<h3 class="font-headline-lg text-headline-lg mb-6 text-brand-deep-charcoal">Architectural Hair</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-lg">Beyond mere styling, our approach to hair involves structural analysis and geometric precision. We consider bone structure, growth patterns, and personal aesthetic to craft silhouettes that are both impactful and inherently wearable.</p>
+<ul class="space-y-4 font-body-md text-brand-deep-charcoal/80 mb-8">
+<li>— Precision Cutting &amp; Tailoring</li>
+<li>— Dimensional Color &amp; Balayage</li>
+<li>— Restorative Keratin Rituals</li>
+</ul>
+<a class="font-label-md text-label-md uppercase tracking-widest border-b border-brand-deep-charcoal pb-1 hover:text-brand-muted-gold hover:border-brand-muted-gold transition-colors" href="#">Explore Hair Services</a>
+</div>
+<div class="md:w-1/2 w-full order-1 md:order-2 relative aspect-[4/3] overflow-hidden bg-surface-variant film-grain clip-reveal-container">
+<img alt="Hair Styling" class="w-full h-full object-cover clip-reveal-img" data-alt="Close up of beautiful, sleek hair styling in a luxury salon setting. The lighting is soft and directional, highlighting the texture and shine of the hair. Modern minimalist aesthetic with a deep charcoal background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC--TdfQCeXpvkbSZ8JUDnEvKURbpwQAOhq52Qo_6QonW9DnRUreiSNlBjvgWybdk2A4T32QgfU4zLNxcrRvoG09V4itlAWV260ZxZM_mSlZplWVXwYtlKvEZAtsQ1FZognPJJWoa7Ro3lBfg5fKBkG9tUlRLaO3U888HPKaOBiHefzuZwKtt-t7r4hK-B6FN7B_MUUb5uqO20UXX3-c1JpJ0PQKQLvjeRwja2ywtH7vNZC6MF3L-PGAdBZU6zQWhhRw6pdtH5X9ES_"/>
+<div class="absolute inset-0 bg-brand-deep-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="absolute inset-0 image-mask-hover bg-brand-soft-beige/10 backdrop-blur-[2px] flex items-center justify-center">
+<span class="text-brand-soft-beige font-button text-button uppercase tracking-widest border border-brand-soft-beige px-6 py-3">View Details</span>
+</div>
+</div>
+</div>
+<!-- Skin -->
+<div class="md:col-span-12 group cursor-pointer reveal-card flex flex-col md:flex-row items-center gap-12 relative">
+<div class="md:w-1/2 w-full relative aspect-[4/3] overflow-hidden bg-surface-variant film-grain clip-reveal-container">
+<img alt="Skin Care" class="w-full h-full object-cover clip-reveal-img" data-alt="A serene skincare moment. A woman with flawless skin receiving a facial treatment in a bright, minimalist room. Soft beige tones dominate the palette, conveying purity and luxury. High-end editorial lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACj6SbteoSmcRq0EaOkqoG3W7-dYldYlHmg6o0PJWqNhZ-9NX0LYD0uFW7ok_HQN6nVyKes884lOgJJFClw9GcGKF6v1jJhWa1dZo9_eWTrUDdkiAyOfEwHsCKL7UWpa66haA-XYqjpFUdhuW58Ap8EReWfwoxMSpkLgLSZ7jeJ_sABjneVUU_KRDjwmSZrAaRx3eo-ZK7hdYZwZxjVX5GvonG-akLX9V4Ug7UiIK4zZb3fGwNQcJaYvY7o2yM6M4sfoT1BfWK5wLa"/>
+<div class="absolute inset-0 bg-brand-deep-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="absolute inset-0 image-mask-hover bg-brand-soft-beige/10 backdrop-blur-[2px] flex items-center justify-center">
+<span class="text-brand-soft-beige font-button text-button uppercase tracking-widest border border-brand-soft-beige px-6 py-3">View Details</span>
+</div>
+</div>
+<div class="md:w-1/2 w-full z-10 pl-0 md:pl-12">
+<h3 class="font-headline-lg text-headline-lg mb-6 text-brand-deep-charcoal">Clinical Botanicals</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-lg">We merge the efficacy of clinical skincare with the purity of high-grade botanicals. Each protocol is customized to address cellular health, resulting in profound, lasting transformations rather than superficial fixes.</p>
+<ul class="space-y-4 font-body-md text-brand-deep-charcoal/80 mb-8">
+<li>— Advanced Resurfacing Facials</li>
+<li>— Cellular Hydration Therapy</li>
+<li>— Sculpting &amp; Microcurrent</li>
+</ul>
+<a class="font-label-md text-label-md uppercase tracking-widest border-b border-brand-deep-charcoal pb-1 hover:text-brand-muted-gold hover:border-brand-muted-gold transition-colors" href="#">Explore Skin Services</a>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Banner -->
+<section class="py-stack-lg bg-brand-deep-charcoal text-brand-soft-beige relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
+<div class="max-w-4xl mx-auto text-center px-margin-mobile relative z-10">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-8 leading-tight cta-title">Elevate Your Standard of Beauty.</h2>
+<a class="inline-block border border-brand-soft-beige text-brand-soft-beige font-button text-button uppercase px-10 py-5 tracking-widest hover:bg-brand-soft-beige hover:text-brand-deep-charcoal transition-colors duration-500 magnetic" href="#">Reserve Your Space</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-inverse-surface text-primary dark:text-inverse-primary w-full py-stack-lg border-t border-surface-container-low dark:border-surface-container-low">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="md:col-span-4 mb-12 md:mb-0">
+<a class="font-display-lg text-headline-lg-mobile text-primary dark:text-inverse-primary block mb-6 uppercase tracking-widest" href="#">ELIXIR SALON</a>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-sm">A sanctuary of modern minimalism and high-end editorial aesthetics.</p>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">© 2024 ELIXIR SALON. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="md:col-span-8 flex flex-col md:flex-row justify-end gap-12 md:gap-24 font-label-md text-label-md uppercase tracking-widest">
+<div class="flex flex-col gap-4">
+<h4 class="text-brand-deep-charcoal mb-2 font-bold">Connect</h4>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors underline underline-offset-8 decoration-1 decoration-transparent hover:decoration-primary" href="#">Instagram</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors underline underline-offset-8 decoration-1 decoration-transparent hover:decoration-primary" href="#">Pinterest</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-brand-deep-charcoal mb-2 font-bold">Information</h4>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors underline underline-offset-8 decoration-1 decoration-transparent hover:decoration-primary" href="#">Contact</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors underline underline-offset-8 decoration-1 decoration-transparent hover:decoration-primary" href="#">Careers</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors underline underline-offset-8 decoration-1 decoration-transparent hover:decoration-primary" href="#">Privacy</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
